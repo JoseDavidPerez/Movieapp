@@ -21,10 +21,10 @@
 		105FC2DF28AAAF410092E128 /* DetailMovieProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105FC2DE28AAAF410092E128 /* DetailMovieProtocol.swift */; };
 		105FC2E128AAAF500092E128 /* DetailMoviePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105FC2E028AAAF500092E128 /* DetailMoviePresenter.swift */; };
 		105FC2E528AAE6D10092E128 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105FC2E428AAE6D10092E128 /* MenuOption.swift */; };
-		105FC2E728AB08660092E128 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105FC2E628AB08660092E128 /* BaseViewController.swift */; };
 		105FC2E928AB177E0092E128 /* DetailProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105FC2E828AB177E0092E128 /* DetailProfileView.swift */; };
 		105FC2EC28AB17B50092E128 /* DetailProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105FC2EB28AB17B50092E128 /* DetailProfileRouter.swift */; };
 		105FC2EE28AB18ED0092E128 /* DetailProfileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105FC2ED28AB18ED0092E128 /* DetailProfileProtocol.swift */; };
+		105FC2F028AB233D0092E128 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105FC2EF28AB233D0092E128 /* BaseViewController.swift */; };
 		10B6734628A6B26B00C0116F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B6734528A6B26B00C0116F /* AppDelegate.swift */; };
 		10B6734828A6B26B00C0116F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B6734728A6B26B00C0116F /* SceneDelegate.swift */; };
 		10B6734A28A6B26B00C0116F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B6734928A6B26B00C0116F /* ViewController.swift */; };
@@ -61,10 +61,10 @@
 		105FC2DE28AAAF410092E128 /* DetailMovieProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieProtocol.swift; sourceTree = "<group>"; };
 		105FC2E028AAAF500092E128 /* DetailMoviePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMoviePresenter.swift; sourceTree = "<group>"; };
 		105FC2E428AAE6D10092E128 /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
-		105FC2E628AB08660092E128 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ../../../../../../../BaseViewController.swift; sourceTree = "<group>"; };
 		105FC2E828AB177E0092E128 /* DetailProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProfileView.swift; sourceTree = "<group>"; };
 		105FC2EB28AB17B50092E128 /* DetailProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProfileRouter.swift; sourceTree = "<group>"; };
 		105FC2ED28AB18ED0092E128 /* DetailProfileProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProfileProtocol.swift; sourceTree = "<group>"; };
+		105FC2EF28AB233D0092E128 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		10B6734228A6B26B00C0116F /* MoviesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B6734528A6B26B00C0116F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10B6734728A6B26B00C0116F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,9 +193,9 @@
 		10E64BA728A88F060009CC99 /* Generic */ = {
 			isa = PBXGroup;
 			children = (
+				105FC2EF28AB233D0092E128 /* BaseViewController.swift */,
 				10E64BA828A88F240009CC99 /* CustomTextField.swift */,
 				105FC2D528AA956C0092E128 /* Extensions.swift */,
-				105FC2E628AB08660092E128 /* BaseViewController.swift */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
@@ -292,9 +292,9 @@
 				10B6734A28A6B26B00C0116F /* ViewController.swift in Sources */,
 				105FC2DD28AAAF0B0092E128 /* DetailMovieInteractor.swift in Sources */,
 				105FC2EC28AB17B50092E128 /* DetailProfileRouter.swift in Sources */,
-				105FC2E728AB08660092E128 /* BaseViewController.swift in Sources */,
 				105FC2EE28AB18ED0092E128 /* DetailProfileProtocol.swift in Sources */,
 				105FC2CD28A9F2680092E128 /* LoginResponse.swift in Sources */,
+				105FC2F028AB233D0092E128 /* BaseViewController.swift in Sources */,
 				10E64BA128A883340009CC99 /* LoginPresenter.swift in Sources */,
 				10E64BB628A8CD1A0009CC99 /* MenuView.swift in Sources */,
 				10E64BAB28A8B0B00009CC99 /* LoginProtocol.swift in Sources */,

@@ -24,9 +24,8 @@ class LoginView : BaseViewController, UITextFieldDelegate {
     var usertext: CustomTextField =  {
        let text = CustomTextField()
         text.translatesAutoresizingMaskIntoConstraints = false
-        //text.placeholder = "Username"
+        text.placeholder = "Username"
         text.backgroundColor = .white
-        text.text = "davidAjolote"
         return text
     }()
     
@@ -35,7 +34,6 @@ class LoginView : BaseViewController, UITextFieldDelegate {
         text.translatesAutoresizingMaskIntoConstraints = false
         text.placeholder = "Password"
         text.backgroundColor = .white
-        text.text = "55518395xENA"
         return text
     }()
     
