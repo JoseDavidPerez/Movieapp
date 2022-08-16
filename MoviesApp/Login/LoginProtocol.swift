@@ -10,17 +10,21 @@ import UIKit
 
 
 protocol LoginViewProtocol {
-    
+    func loading(show: Bool)
+    func error(text: String)
 }
 
 protocol LoginPresenterProtocol {
-    func notifyMenu(navegation: UINavigationController)
+    func login(username: String?, password: String?)
+    func succesedLogin()
+    func errorLogin(error: Error)
 }
 
 protocol LoginInteractorProtocol {
-    func goToMenu()
+    func login(username: String, password: String)
+    
 }
 
 protocol LoginRouterProtocol {
-    
+    func goToMenu()
 }

@@ -19,8 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         
         self.window = UIWindow(windowScene: windowScene)
-        let vc = LoginView()
-        let rootNC = UINavigationController(rootViewController: vc)
+        let rootNC = UINavigationController()
+        let vc = LoginRouter.createModule(navegation: rootNC)
+        rootNC.setViewControllers([vc], animated: true)
+        
         
         self.window?.rootViewController = rootNC
         self.window?.makeKeyAndVisible()

@@ -10,11 +10,19 @@ import UIKit
 
 internal class LoginRouter {
     
+    public var navegation : UINavigationController?
+    
 }
 
 extension LoginRouter : LoginRouterProtocol {
     
-    public static func createModule() -> UIViewController {
+    func goToMenu() {
+        let menu = MenuRouter.createModule(navigation: navegation)
+        navegation?.pushViewController(menu, animated: true)
+    }
+    
+    
+    public static func createModule(navegation : UINavigationController) -> UIViewController {
         
         let viewController : LoginView = LoginView()
         
@@ -29,6 +37,8 @@ extension LoginRouter : LoginRouterProtocol {
         presenter.router = router
         
         interactor.presenter = presenter
+        
+        router.navegation = navegation
         
         return viewController
     }

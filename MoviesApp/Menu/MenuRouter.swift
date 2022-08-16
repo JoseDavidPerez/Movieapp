@@ -17,6 +17,18 @@ internal class MenuRouter {
 
 extension MenuRouter : MenuRouterProtocol {
     
+    func goToProfile() {
+        let profile = DetailProfileRouter.createModule(navigation: navigation)
+        navigation?.pushViewController(profile, animated: true)
+    }
+    
+    
+    func respondeDetailMovie(movie: MovieResponse) {
+        let detailmovie = DetailMovieRouter.createModule(navigation: navigation, movie: movie)
+        navigation?.pushViewController(detailmovie, animated: true)
+    }
+    
+    
     public static func createModule(navigation: UINavigationController?) -> UIViewController {
         
         let viewController : MenuView = MenuView()

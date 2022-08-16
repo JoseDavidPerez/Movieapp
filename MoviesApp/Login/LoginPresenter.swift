@@ -18,9 +18,24 @@ class LoginPresenter {
 
 extension LoginPresenter: LoginPresenterProtocol {
     
-    func notifyMenu(navegation: UINavigationController) {
-        let menu = MenuRouter.createModule(navigation: navegation)
-        navegation.pushViewController(menu, animated: true)
+    func succesedLogin() {
+        view?.loading(show: false)
+        router?.goToMenu()
     }
     
+    func errorLogin(error: Error) {
+        view?.loading(show: false)
+        view?.error(text: error.localizedDescription)
+    }
+    
+    
+    func login(username: String?, password: String?) {
+        if let password = password, let username = username, !password.isEmpty, !username.isEmpty {
+            view?.loading(show: true)
+            interactor?.login(username: username, password: password)
+        } else {
+            view?.error(text: "Campos Vacios")
+        }
+    }
+
 }

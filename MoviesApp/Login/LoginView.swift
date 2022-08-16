@@ -8,7 +8,8 @@
 import Foundation
 import UIKit
 
-class LoginView : UIViewController, UITextFieldDelegate {
+class LoginView : BaseViewController, UITextFieldDelegate {
+    
     
     var presenter : LoginPresenter?
     
@@ -20,83 +21,99 @@ class LoginView : UIViewController, UITextFieldDelegate {
         return imagen
     }()
     
-    var labeltitle: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Titulo"
-        label.textColor = .green
-       return label
+    var usertext: CustomTextField =  {
+       let text = CustomTextField()
+        text.translatesAutoresizingMaskIntoConstraints = false
+        //text.placeholder = "Username"
+        text.backgroundColor = .white
+        text.text = "davidAjolote"
+        return text
     }()
     
-    var labeldate: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Jun 17, 2021"
-        label.textColor = .green
-       return label
+    var passwordtext: CustomTextField = {
+       let text = CustomTextField()
+        text.translatesAutoresizingMaskIntoConstraints = false
+        text.placeholder = "Password"
+        text.backgroundColor = .white
+        text.text = "55518395xENA"
+        return text
     }()
     
-    var labelrating: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "8.0"
-        label.textColor = .green
-       return label
+    var logininbotton: UIButton = {
+        let botton = UIButton()
+        botton.translatesAutoresizingMaskIntoConstraints = false
+        botton.setTitle("Log in", for: .normal)
+        botton.addTarget(self, action: #selector(loginAction), for: .touchUpInside)
+        botton.backgroundColor = .lightGray
+       return botton
     }()
     
-    var labelabout: UILabel = {
+    lazy var labelerror: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen."
-        label.numberOfLines = 0
-        label.textColor = .white
+        label.text = ""
+        label.textColor = .red
+        label.textAlignment = .center
+        label.numberOfLines = 2
        return label
     }()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDelegates()
         setupComponets()
         setupConstraint()
         
+        
     }
     
-
+    func setDelegates(){
+        
+        usertext.delegate = self
+        passwordtext.delegate = self
+    }
     
     @objc func loginAction (sender: AnyObject){
-        self.presenter?.notifyMenu(navegation: self.navigationController!)
+        self.presenter?.login(username: usertext.text, password: passwordtext.text)
         
     }
     
     func setupComponets(){
-        
         view.addSubview(imagenview)
-        view.addSubview(labeltitle)
-        view.addSubview(labeldate)
-        view.addSubview(labelabout)
+        view.addSubview(usertext)
+        view.addSubview(passwordtext)
+        view.addSubview(logininbotton)
+        view.addSubview(labelerror)
     }
     
     func setupConstraint(){
         
         NSLayoutConstraint.activate([
             
-            imagenview.topAnchor.constraint(equalTo: view.topAnchor),
-            imagenview.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            imagenview.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            imagenview.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+            imagenview.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            imagenview.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            imagenview.heightAnchor.constraint(equalToConstant: 100),
+            imagenview.widthAnchor.constraint(equalToConstant: 100),
             
-            labeltitle.topAnchor.constraint(equalTo: imagenview.bottomAnchor, constant: 20),
-            labeltitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            labeltitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-
+            usertext.topAnchor.constraint(equalTo: imagenview.bottomAnchor, constant: 20),
+            usertext.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            usertext.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            usertext.heightAnchor.constraint(equalToConstant: 50),
             
-            labeldate.topAnchor.constraint(equalTo: labeltitle.bottomAnchor, constant: 30),
-            labeldate.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            labeldate.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            passwordtext.topAnchor.constraint(equalTo: usertext.bottomAnchor, constant: 20),
+            passwordtext.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            passwordtext.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            passwordtext.heightAnchor.constraint(equalToConstant: 50),
             
-            labelabout.topAnchor.constraint(equalTo: labeldate.bottomAnchor, constant: 20),
-            labelabout.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            labelabout.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            labelabout.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
+            logininbotton.topAnchor.constraint(equalTo: passwordtext.bottomAnchor, constant: 20),
+            logininbotton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            logininbotton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            logininbotton.heightAnchor.constraint(equalToConstant: 50),
+            
+            labelerror.topAnchor.constraint(equalTo: logininbotton.bottomAnchor, constant: 15),
+            labelerror.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            labelerror.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10)
             
         ])
     }
@@ -106,9 +123,35 @@ class LoginView : UIViewController, UITextFieldDelegate {
 extension LoginView : UITextViewDelegate {
     
     
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        usertext.resignFirstResponder()
+        passwordtext.resignFirstResponder()
+        
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        labelerror.text = ""
+    }
 }
 
 extension LoginView : LoginViewProtocol {
+    
+    
+    
+    func loading(show: Bool) {
+        if show {
+            self.createSpinner()
+        }else {
+            self.removeSpinner()
+        }
+    }
+    
+    func error(text: String) {
+        labelerror.text = "Invalid username and/or password: You did not provide a valid login."
+        labelerror.textColor = .red
+    }
+    
     
 }

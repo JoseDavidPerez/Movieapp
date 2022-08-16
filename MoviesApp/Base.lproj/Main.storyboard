@@ -45,8 +45,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moviedb" translatesAutoresizingMaskIntoConstraints="NO" id="Byh-OC-Jgs">
-                                <rect key="frame" x="60" y="169" width="294" height="125"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.3.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Byh-OC-Jgs">
+                                <rect key="frame" x="60" y="170.5" width="294" height="122"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="Qku-Zf-Sni"/>
                                 </constraints>
@@ -160,7 +160,7 @@
     </scenes>
     <resources>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
-        <image name="moviedb" width="512" height="512"/>
+        <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
