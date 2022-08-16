@@ -16,7 +16,7 @@ class LoginView : BaseViewController, UITextFieldDelegate {
     var imagenview : UIImageView = {
         let imagen = UIImageView()
         imagen.translatesAutoresizingMaskIntoConstraints = false
-        imagen.image = UIImage(named: "moviedb")
+        imagen.image = UIImage(named: "themoviedblogin")
         imagen.contentMode = .scaleAspectFit
         return imagen
     }()
